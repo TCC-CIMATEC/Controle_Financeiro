@@ -158,3 +158,8 @@ C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinan
 C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Financa\Details.cshtml.g.cs
 C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Financa\Edit.cshtml.g.cs
 C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Financa\Index.cshtml.g.cs
+C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Create.cshtml.g.cs
+C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Delete.cshtml.g.cs
+C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Details.cshtml.g.cs
+C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edit.cshtml.g.cs
+C:\Users\jorge.valois\Documents\pessoal\Tecnico\DS2\trabalho final\controleFinanceiro\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs

@@ -21,7 +21,8 @@ namespace controleFinanceiro.Controllers
         // GET: Financa
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Financa.ToListAsync());
+            var controleFinanceiroContext = _context.Financa.Include(f => f.Categoria).Include(f => f.Modalidade).Include(f => f.Tipo).Include(f => f.Usuario);
+            return View(await controleFinanceiroContext.ToListAsync());
         }
 
         // GET: Financa/Details/5
@@ -33,7 +34,11 @@ namespace controleFinanceiro.Controllers
             }
 
             var financa = await _context.Financa
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(f => f.Categoria)
+                .Include(f => f.Modalidade)
+                .Include(f => f.Tipo)
+                .Include(f => f.Usuario)
+                .FirstOrDefaultAsync(m => m.FinancaId == id);
             if (financa == null)
             {
                 return NotFound();
@@ -45,6 +50,10 @@ namespace controleFinanceiro.Controllers
         // GET: Financa/Create
         public IActionResult Create()
         {
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao");
+            ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao");
+            ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome");
             return View();
         }
 
@@ -53,7 +62,7 @@ namespace controleFinanceiro.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Valor,Data")] Financa financa)
+        public async Task<IActionResult> Create([Bind("FinancaId,Valor,DataFinanca,ModalidadeId,CategoriaId,TipoId,UsuarioId")] Financa financa)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +70,10 @@ namespace controleFinanceiro.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao", financa.CategoriaId);
+            ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao", financa.ModalidadeId);
+            ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao", financa.TipoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome", financa.UsuarioId);
             return View(financa);
         }
 
@@ -77,6 +90,10 @@ namespace controleFinanceiro.Controllers
             {
                 return NotFound();
             }
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao", financa.CategoriaId);
+            ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao", financa.ModalidadeId);
+            ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao", financa.TipoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome", financa.UsuarioId);
             return View(financa);
         }
 
@@ -85,9 +102,9 @@ namespace controleFinanceiro.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Valor,Data")] Financa financa)
+        public async Task<IActionResult> Edit(int id, [Bind("FinancaId,Valor,DataFinanca,ModalidadeId,CategoriaId,TipoId,UsuarioId")] Financa financa)
         {
-            if (id != financa.Id)
+            if (id != financa.FinancaId)
             {
                 return NotFound();
             }
@@ -101,7 +118,7 @@ namespace controleFinanceiro.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FinancaExists(financa.Id))
+                    if (!FinancaExists(financa.FinancaId))
                     {
                         return NotFound();
                     }
@@ -112,6 +129,10 @@ namespace controleFinanceiro.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao", financa.CategoriaId);
+            ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao", financa.ModalidadeId);
+            ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao", financa.TipoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome", financa.UsuarioId);
             return View(financa);
         }
 
@@ -124,7 +145,11 @@ namespace controleFinanceiro.Controllers
             }
 
             var financa = await _context.Financa
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(f => f.Categoria)
+                .Include(f => f.Modalidade)
+                .Include(f => f.Tipo)
+                .Include(f => f.Usuario)
+                .FirstOrDefaultAsync(m => m.FinancaId == id);
             if (financa == null)
             {
                 return NotFound();
@@ -146,7 +171,7 @@ namespace controleFinanceiro.Controllers
 
         private bool FinancaExists(int id)
         {
-            return _context.Financa.Any(e => e.Id == id);
+            return _context.Financa.Any(e => e.FinancaId == id);
         }
     }
 }
