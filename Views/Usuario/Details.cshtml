@@ -18,6 +18,56 @@
         </dd>
     </dl>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Valor
+            </th>
+            <th>
+               Data da Finança
+            </th>
+            <th>
+                Modalidade
+            </th>
+            <th>
+                Categoria
+            </th>
+            <th>
+                Tipo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Financas) {
+        <tr>
+            <td>
+                @string.Format("{0:C}", item.Valor)
+            </td>
+            <td>
+                @item.DataFinanca.ToString("dd/MM/yyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modalidade.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Descricao)
+            </td>
+            <td>
+                | @Html.ActionLink("Editar", "Edit", "Financa", new { id = @item.FinancaId}) |
+                @Html.ActionLink("Detalhes", "Details", "Financa", new { id = @item.FinancaId}) |
+                @Html.ActionLink("Deletar", "Delete", "Financa", new { id = @item.FinancaId}) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.UsuarioId">Edit</a> |
     <a asp-action="Index">Back to List</a>

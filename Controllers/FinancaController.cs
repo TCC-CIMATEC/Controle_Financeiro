@@ -25,6 +25,13 @@ namespace controleFinanceiro.Controllers
             return View(await controleFinanceiroContext.ToListAsync());
         }
 
+         // GET: FinancaByUsuarioId
+        public async Task<IActionResult> FindByUsuarioId(int? usuarioId)
+        {
+            var controleFinanceiroContext = _context.Financa.Where(f=>f.UsuarioId == usuarioId).Include(f => f.Categoria).Include(f => f.Modalidade).Include(f => f.Tipo).Include(f => f.Usuario);
+            return View(await controleFinanceiroContext.ToListAsync());
+        }
+
         // GET: Financa/Details/5
         public async Task<IActionResult> Details(int? id)
         {

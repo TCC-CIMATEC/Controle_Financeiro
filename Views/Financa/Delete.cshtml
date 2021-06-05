@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.DataFinanca)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataFinanca)
+            @Model.DataFinanca.ToString("dd/MM/yyy")
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Modalidade)
@@ -52,6 +52,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="FinancaId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar Para a Lista</a>
+        | @Html.ActionLink("Voltar para a Lista", "Details", "Usuario", new { id = @Model.UsuarioId}) |
     </form>
 </div>

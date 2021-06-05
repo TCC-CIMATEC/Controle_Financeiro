@@ -38,7 +38,8 @@ namespace controleFinanceiro.Controllers
             {
                 return NotFound();
             }
-
+            var financas = _context.Financa.Where(f => f.UsuarioId == id).Include(f => f.Categoria).Include(f => f.Modalidade).Include(f => f.Tipo).Include(f => f.Usuario).ToList();
+            usuario.Financas = financas;
             return View(usuario);
         }
 

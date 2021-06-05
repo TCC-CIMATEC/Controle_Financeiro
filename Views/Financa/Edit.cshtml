@@ -51,6 +51,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Voltar Para a Lista</a>
+              | @Html.ActionLink("Voltar para a Lista", "Details", "Usuario", new { id = @Model.UsuarioId}) |
 </div>
 
