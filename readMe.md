@@ -19,3 +19,23 @@ Trabalho desenvolvido para a Disciplina Desenvolvimento de Sistemas II, do Curso
     - Despesa Fixa: saídas que tem mesmo valor a cada mês, como aluguel, internet, telefone, etc;
 * Categoria: representa a natureza da transação: lazer, transporte, alimentação, salário, etc; 
 * Modalidade: representa a forma de pagamento ou recebimento, como transferências, PIX, dinheiro, cartão, etc.
+
+## Tecnologias Utilizadas
+
+* ASP. NET Core
+* C# MVC
+* Banco de Dados MySQL
+
+## Como instalar
+
+* Clonar o repositório
+* Executar o comando `dotnet build`
+* Executar o comando `dotnet run`
+
+## Equipe
+
+* [Elisete Vidotti]("https://github.com/lizvidotti91")
+* [Hudson Duarte]("https://github.com/huduarte")
+* [João Lucas Andrade]("https://github.com/Jlucas93")
+* [Jorge Valois]("https://github.com/JorgeValois")
+* [Luiz Gonzaga]("https://github.com/LuizGonzaga91")
