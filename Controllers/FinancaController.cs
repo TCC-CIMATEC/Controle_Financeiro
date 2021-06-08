@@ -25,10 +25,10 @@ namespace controleFinanceiro.Controllers
             return View(await controleFinanceiroContext.ToListAsync());
         }
 
-         // GET: FinancaByUsuarioId
+        // GET: FinancaByUsuarioId
         public async Task<IActionResult> FindByUsuarioId(int? usuarioId)
         {
-            var controleFinanceiroContext = _context.Financa.Where(f=>f.UsuarioId == usuarioId).Include(f => f.Categoria).Include(f => f.Modalidade).Include(f => f.Tipo).Include(f => f.Usuario);
+            var controleFinanceiroContext = _context.Financa.Where(f => f.UsuarioId == usuarioId).Include(f => f.Categoria).Include(f => f.Modalidade).Include(f => f.Tipo).Include(f => f.Usuario);
             return View(await controleFinanceiroContext.ToListAsync());
         }
 
@@ -55,12 +55,17 @@ namespace controleFinanceiro.Controllers
         }
 
         // GET: Financa/Create
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao");
             ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao");
             ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao");
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuario.Where(usu => usu.UsuarioId == id), "UsuarioId", "Nome");
             return View();
         }
 
@@ -69,13 +74,13 @@ namespace controleFinanceiro.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FinancaId,Valor,DataFinanca,ModalidadeId,CategoriaId,TipoId,UsuarioId")] Financa financa)
+        public async Task<IActionResult> Create([Bind("FinancaId,Valor,DataFinanca,ModalidadeId,CategoriaId,TipoId,UsuarioId")] Financa financa, int UsuarioId)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(financa);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Usuario", new { id = UsuarioId });
             }
             ViewData["CategoriaId"] = new SelectList(_context.Categoria, "CategoriaId", "Descricao", financa.CategoriaId);
             ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao", financa.ModalidadeId);

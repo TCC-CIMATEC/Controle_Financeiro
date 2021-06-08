@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorge.valois\\Documents\\pessoal\\Tecnico\\DS2\\trabalho final\\controleFinanceiro\\controleFinanceiro.csproj": {}
+    "C:\\Users\\Liz\\Documents\\DESENVOLVIMENTO DE SISTEMAS II\\Controle_Financeiro\\controleFinanceiro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorge.valois\\Documents\\pessoal\\Tecnico\\DS2\\trabalho final\\controleFinanceiro\\controleFinanceiro.csproj": {
+    "C:\\Users\\Liz\\Documents\\DESENVOLVIMENTO DE SISTEMAS II\\Controle_Financeiro\\controleFinanceiro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorge.valois\\Documents\\pessoal\\Tecnico\\DS2\\trabalho final\\controleFinanceiro\\controleFinanceiro.csproj",
+        "projectUniqueName": "C:\\Users\\Liz\\Documents\\DESENVOLVIMENTO DE SISTEMAS II\\Controle_Financeiro\\controleFinanceiro.csproj",
         "projectName": "controleFinanceiro",
-        "projectPath": "C:\\Users\\jorge.valois\\Documents\\pessoal\\Tecnico\\DS2\\trabalho final\\controleFinanceiro\\controleFinanceiro.csproj",
-        "packagesPath": "C:\\Users\\jorge.valois\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorge.valois\\Documents\\pessoal\\Tecnico\\DS2\\trabalho final\\controleFinanceiro\\obj\\",
+        "projectPath": "C:\\Users\\Liz\\Documents\\DESENVOLVIMENTO DE SISTEMAS II\\Controle_Financeiro\\controleFinanceiro.csproj",
+        "packagesPath": "C:\\Users\\Liz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Liz\\Documents\\DESENVOLVIMENTO DE SISTEMAS II\\Controle_Financeiro\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jorge.valois\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Liz\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +38,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -85,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

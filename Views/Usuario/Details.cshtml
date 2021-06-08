@@ -10,20 +10,24 @@
     <h4>Usuário</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
+        @{
+            var idUsu = Model.UsuarioId;
+        }
+        @Html.ActionLink("Nova Finança", "Create", "Financa", new { id = @idUsu})
     </dl>
 </div>
 
-<br/>
+<br />
 <hr />
-@Html.ActionLink("Nova Finança", "Create", "Financa") 
+
 <hr />
-<br/>
+<br />
 <table class="table">
     <thead>
         <tr>
@@ -31,7 +35,7 @@
                 Valor
             </th>
             <th>
-               Data da Finança
+                Data da Finança
             </th>
             <th>
                 Modalidade
@@ -46,33 +50,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Financas) {
-        <tr>
-            <td>
-                @string.Format("{0:C}", item.Valor)
-            </td>
-            <td>
-                @item.DataFinanca.ToString("dd/MM/yyy")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modalidade.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.Descricao)
-            </td>
-            <td>
-                | @Html.ActionLink("Editar", "Edit", "Financa", new { id = @item.FinancaId}) |
-                @Html.ActionLink("Detalhes", "Details", "Financa", new { id = @item.FinancaId}) |
-                @Html.ActionLink("Deletar", "Delete", "Financa", new { id = @item.FinancaId}) |
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Financas)
+        {
+            <tr>
+                <td>
+                    @string.Format("{0:C}", item.Valor)
+                </td>
+                <td>
+                    @item.DataFinanca.ToString("dd/MM/yyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modalidade.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo.Descricao)
+                </td>
+                <td>
+                    | @Html.ActionLink("Editar", "Edit", "Financa", new { id = @item.FinancaId}) |
+                    @Html.ActionLink("Detalhes", "Details", "Financa", new { id = @item.FinancaId}) |
+                    @Html.ActionLink("Deletar", "Delete", "Financa", new { id = @item.FinancaId}) |
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-
 <div>
     <a asp-action="Edit" asp-route-id="@Model.UsuarioId">Editar</a> |
     <a asp-action="Index">Voltar para a listagem.</a>
