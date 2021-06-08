@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Finanças</h1>
 
 <p>
     <a asp-action="Create">Nova Finança</a>
@@ -43,7 +43,7 @@
                 @string.Format("{0:C}", item.Valor)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DataFinanca.Date)
+                @item.DataFinanca.ToString("dd/MM/yyy")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Modalidade.Descricao)

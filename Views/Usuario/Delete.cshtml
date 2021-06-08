@@ -4,9 +4,9 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Deletar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que deseja excluir esse registro?</h3>
 <div>
     <h4>Usuario</h4>
     <hr />
@@ -19,9 +19,9 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-action="Deletar">
         <input type="hidden" asp-for="UsuarioId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Voltar para a listagem.</a>
     </form>
 </div>
