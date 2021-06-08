@@ -4,30 +4,22 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalhes</h1>
-
-<div>
-    <h4>Usuário</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        @{
-            var idUsu = Model.UsuarioId;
-        }
-        @Html.ActionLink("Nova Finança", "Create", "Financa", new { id = @idUsu})
-    </dl>
+<div class="d-flex align-items-center justify-content-between">
+    <h1>
+        @Html.DisplayFor(model => model.Nome)
+    </h1>
+    @{
+        var idUsu = Model.UsuarioId;
+    }
+    <div class="btn-group btn-group-toggle">
+        <div class="btn btn-light">
+            @Html.ActionLink("Nova transação", "Create", "Financa", new { id = @idUsu})
+        </div>
+        <a class="btn btn-light text-primary" asp-action="Edit" asp-route-id="@Model.UsuarioId">Editar Usuário</a>
+        <a class="btn btn-light text-primary" asp-action="Index">Voltar</a>
+    </div>
 </div>
 
-<br />
-<hr />
-
-<hr />
-<br />
 <table class="table">
     <thead>
         <tr>
@@ -68,16 +60,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Tipo.Descricao)
                 </td>
-                <td>
-                    | @Html.ActionLink("Editar", "Edit", "Financa", new { id = @item.FinancaId}) |
-                    @Html.ActionLink("Detalhes", "Details", "Financa", new { id = @item.FinancaId}) |
-                    @Html.ActionLink("Deletar", "Delete", "Financa", new { id = @item.FinancaId}) |
+                <td class="btn-group btn-group-toggle">
+                    <div class="btn btn-light btn-sm">
+                        @Html.ActionLink("Editar", "Edit", "Financa", new { id = @item.FinancaId})
+                    </div>
+                    <div class="btn btn-light btn-sm">
+                        @Html.ActionLink("Detalhes", "Details", "Financa", new { id = @item.FinancaId})
+                    </div>
+                    <div class="btn btn-light btn-sm">
+                        @Html.ActionLink("Deletar", "Delete", "Financa", new { id = @item.FinancaId})
+                    </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.UsuarioId">Editar</a> |
-    <a asp-action="Index">Voltar para a listagem.</a>
-</div>

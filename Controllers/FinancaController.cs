@@ -86,6 +86,7 @@ namespace controleFinanceiro.Controllers
             ViewData["ModalidadeId"] = new SelectList(_context.Modalidade, "ModalidadeId", "Descricao", financa.ModalidadeId);
             ViewData["TipoId"] = new SelectList(_context.Tipo, "TipoId", "Descricao", financa.TipoId);
             ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "Nome", financa.UsuarioId);
+            ViewData["IdCurrent"] = UsuarioId;
             return View(financa);
         }
 

@@ -308,7 +308,6 @@ C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\De
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Financa\Edit.cshtml.g.cs
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Financa\Index.cshtml.g.cs
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -328,3 +327,4 @@ C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\De
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\controleFinanceiro.dll
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\controleFinanceiro.pdb
 C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\controleFinanceiro.genruntimeconfig.cache
+C:\Users\Liz\Documents\DESENVOLVIMENTO DE SISTEMAS II\Controle_Financeiro\obj\Debug\netcoreapp3.1\Razor\Views\Home\Sobre.cshtml.g.cs

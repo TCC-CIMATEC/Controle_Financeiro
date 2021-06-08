@@ -11,17 +11,17 @@
     <h4>Usuario</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
     </dl>
-    
+
     <form asp-action="Deletar">
         <input type="hidden" asp-for="UsuarioId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar para a listagem.</a>
+        <input type="submit" value="Delete" class="btn btn-info" />
+        <a class="btn btn-light" asp-action="Index">Voltar</a>
     </form>
 </div>

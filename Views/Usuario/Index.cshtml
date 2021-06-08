@@ -4,11 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Usuários</h1>
-
-<p>
-    <a asp-action="Create">Novo</a>
-</p>
+<div class="d-flex align-items-center justify-content-between">
+    <h1>Usuários</h1>
+    <a class="btn btn-info" asp-action="Create">Cadastrar</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -19,17 +18,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UsuarioId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.UsuarioId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.UsuarioId">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="btn-group btn-group-toggle">
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.UsuarioId">Ver finanças</a>
+                    <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@item.UsuarioId">Editar</a>
+                    <a class="btn btn-secondary btn-sm" asp-action="Delete" asp-route-id="@item.UsuarioId">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
