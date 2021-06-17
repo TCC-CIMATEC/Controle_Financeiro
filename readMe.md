@@ -34,8 +34,8 @@ Trabalho desenvolvido para a Disciplina Desenvolvimento de Sistemas II, do Curso
 
 ## Equipe
 
-* [Elisete Vidotti]("https://github.com/lizvidotti91")
-* [Hudson Duarte]("https://github.com/huduarte")
-* [João Lucas Andrade]("https://github.com/Jlucas93")
-* [Jorge Valois]("https://github.com/JorgeValois")
-* [Luiz Gonzaga]("https://github.com/LuizGonzaga91")
+* [Elisete Vidotti](https://github.com/lizvidotti91)
+* [Hudson Duarte](https://github.com/huduarte)
+* [João Lucas Andrade](https://github.com/Jlucas93)
+* [Jorge Valois](https://github.com/JorgeValois)
+* [Luiz Gonzaga](https://github.com/LuizGonzaga91)
